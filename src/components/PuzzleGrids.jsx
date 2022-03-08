@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const PuzzleGrids = ({ numofGrids, a2 }) => {
 // console.log({expert:a2})
 
-const imgBox = document.querySelector('.dragStart');
+// const imgBox = document.querySelector('.dragStart');
 
 const onDragStart =()=>{
 
