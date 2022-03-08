@@ -45,7 +45,7 @@ const PuzzleGrids = ({ numofGrids, a2 }) => {
           };
           return (
             <div className='flex flex-col items-center justify-center mt-4 w-full h-full' >
-              <div className='text-6xl font-extrabold text-center py-2 rounded-lg w-1/12 bg-green-600 text-white '>
+              <div className='text-6xl font-extrabold text-center py-auto rounded-lg  bg-green-600 text-white '>
                 {numofGrids * numofGrids}
               </div>
               <div className='mt-6 flex  gap-x-2  flex-wrap justify-center w-96'
