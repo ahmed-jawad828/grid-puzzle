@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 const PuzzleGrids = ({ numofGrids, a2 }) => {
-          const [grids, setNumofGrids] = useState(a2);
-          
+          const [grids, setNumofGrids] = useState(a2);          
           useEffect(() => {
             setNumofGrids(a2)
           },[a2])
@@ -10,17 +9,6 @@ const PuzzleGrids = ({ numofGrids, a2 }) => {
           const handleDragStart =(e, index)=>{
             e.dataTransfer.setData("dragContent", index);
           }
-          const handleDragEnter = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-          };
-          const handleDragLeave = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-          };
-          const handleDragOver = (e) => {
-            e.preventDefault();
-            return false;};
           const handleDrop = (e,index) => {
             e.preventDefault();
             let fromBox = JSON.parse(e.dataTransfer.getData("dragContent"));
@@ -55,9 +43,9 @@ const PuzzleGrids = ({ numofGrids, a2 }) => {
                         <button key={index} draggable="true"   
                           onDragStart={(e)=>handleDragStart(e,index)}
                           onDrop={(e) => handleDrop(e,index)}
-                          onDragOver={(e) => handleDragOver(e)}
-                          onDragEnter={(e) => handleDragEnter(e)}
-                          onDragLeave={(e) => handleDragLeave(e)}
+                          // onDragOver={(e) => handleDragOver(e)}
+                          // onDragEnter={(e) => handleDragEnter(e)}
+                          // onDragLeave={(e) => handleDragLeave(e)}
                           className='dragStart text-2xl transform hover:bg-purple-900 transition duration-500 hover:scale-110 font-bold h-24 w-24 bg-purple-300 border-2 border-purple-900 my-1  rounded-lg text-black hover:text-white'>{item}
                         </button>
                     )}
