@@ -2,7 +2,9 @@ import {  useState } from 'react';
 import './App.css';
 import PuzzleGrids from './components/PuzzleGrids';
 const App = () => {
+
       const [numofGrids, setNumofGrids] = useState(0);
+
       var a1 = [];
       for (var i = 0; i < (numofGrids * numofGrids); i++) { a1.push(i + 1); }
       var a2 = [];
@@ -11,6 +13,7 @@ const App = () => {
         var element = a1.splice(pos, 1)[0];
         a2.push(element);
       }
+
       return (
         <div className="css-selector h-full min-h-screen">
           <div className='flex justify-center flex-col items-center '>
@@ -18,9 +21,6 @@ const App = () => {
               Grid Puzzle Task
             </h1>
             <div className='w-2/6 py-10'>
-              <label htmlFor="email" className="sr-only">
-                Email
-              </label>
               <input
                 type="number"
                 name="number"
