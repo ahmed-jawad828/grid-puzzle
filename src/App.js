@@ -58,15 +58,9 @@ const App = () => {
             Submit
           </button>
         </div> */}
-
-
       </div>
-
-
       <div className={numofGrids>0 ? "":"hidden"}>
             <PuzzleGrids numofGrids={numofGrids} a2={a2}/>
-
-
       </div>
     </div>
   );
