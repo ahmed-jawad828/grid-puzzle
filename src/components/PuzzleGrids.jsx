@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import "./style.css"
 
-const PuzzleGrids = ({ numofGrids, a2 }) => {
+const PuzzleGrids = ({ numofGrids, a2,setGrids ,setisPuzzleCompleted}) => {
 
           const [grids, setNumofGrids] = useState(a2);    
-
+          const [isGridSorted, setisGridSorted] = useState(false);  
+                     
           useEffect(() => {
             setNumofGrids(a2)
           },[a2])
-
+          
           const handleDragStart =(e, index)=>{
             e.dataTransfer.setData("dragContent", index);
           }
@@ -25,37 +26,38 @@ const PuzzleGrids = ({ numofGrids, a2 }) => {
             e.preventDefault();
             e.stopPropagation();
           };
-
+         
           const handleDragLeave = (e) => {
             e.preventDefault();
             e.stopPropagation();
           };
-
           const handleDragOver = (e) => {
             e.preventDefault();
             e.stopPropagation();
           };   
-
           const swapBoxes = (fromBox, toBox) => {
             const newItems = grids.slice();
             const temp = grids[fromBox];
             newItems[fromBox] = grids[toBox];
-            console.log("@jawad ~ file: PuzzleGrids.jsx ~ line 89 ~ toBox", toBox)
-            console.log("@jawad ~ file: PuzzleGrids.jsx ~ line 93 ~ newItems[fromBox]", newItems[fromBox])
-            if(temp === (toBox+1)){
-              Swal.fire(
+            newItems[toBox] = temp;
+            setNumofGrids(newItems);  
+            setisGridSorted(newItems.every((v,i,a) => !i || a[i-1] <= v))
+          };
+          useEffect(() => {
+            if(isGridSorted){
+                Swal.fire(
                 'Great job!',
                 'Welcome to the Team!',
                 'success'
               )
-            }
-            newItems[toBox] = temp;
-            setNumofGrids(newItems);
-          };
-
+              setGrids(0)
+              setisPuzzleCompleted(true)            
+            }            
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+          },[isGridSorted])
           return (
             <div className='flex flex-col items-center justify-center mt-4 w-full h-full' >
-              <div className='text-6xl font-extrabold text-center py-2 px-6 rounded-lg  bg-green-600 text-white '>
+              <div className='text-6xl font-extrabold text-center py-2 px-6 rounded-lg  bg-green-500 text-white '>
                 {numofGrids * numofGrids}
                 <span className="text-lg font-normal pl-2">Boxes</span>
               </div>

@@ -34,3 +34,16 @@
   align-items: center;
   flex: 1;
 }
+.glow {
+  font-size: 2rem;
+	    text-align: center;
+	    color: #fcedd8;
+	    /* background: #d52e3f; */
+	   	font-family: 'Niconne', cursive;
+	    font-weight: 700;
+      text-shadow: 5px 5px 0px #eb452b, 
+                  10px 10px 0px #efa032, 
+                  15px 15px 0px #46b59b, 
+                  20px 20px 0px #017e7f, 
+                  25px 25px 0px #052939;
+}
