@@ -65,7 +65,7 @@ const PuzzleGrids = ({ numofGrids, a2,setGrids ,setisPuzzleCompleted}) => {
                 </div>
               </div>
               <div className='flex justify-center pb-10 items-center pt-4 '>
-                <div className=' gridlayout  h-full gap-x-1 ' >
+                <div className=' gridlayout  h-full gap-x-2 ' >
                       {grids?.map((item, index) => 
                           <button key={index} 
                           draggable="true"   
