@@ -41,7 +41,7 @@ const App = () => {
   },[numofGrids])
 
   return (
-    <div className="css-selector h-full min-h-screen">
+    <div className="css-selector h-full min-h-screen w-full min-w-max">
       <div className='flex justify-center flex-col items-center '>
         <h1 className=' fontstyle text-4xl font-bold font-sans text-black text-center pt-10'>
           Grid Puzzle Task
