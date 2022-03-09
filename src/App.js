@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import PuzzleGrids from './components/PuzzleGrids';
 import Confetti from 'react-dom-confetti';
@@ -30,11 +30,20 @@ const App = () => {
     perspective: '500px',
     colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
   };
+  const handleSquaredGridLayout =(numofGrids) =>{
+    document.documentElement.style.setProperty('--num-of-grids',numofGrids)
+  }
+  useEffect(() => {
+    const grids =getComputedStyle(document.documentElement).getPropertyValue('--num-of-grids')          
+    console.log("@jawad ~ file: App.js ~ line 35 ~ grids", grids)
+    handleSquaredGridLayout(numofGrids)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[numofGrids])
 
   return (
     <div className="css-selector h-full min-h-screen">
       <div className='flex justify-center flex-col items-center '>
-        <h1 className='text-4xl font-bold font-sans text-black text-center pt-10'>
+        <h1 className=' fontstyle text-4xl font-bold font-sans text-black text-center pt-10'>
           Grid Puzzle Task
         </h1>
         <div className='w-2/6 py-10'>

@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
 .css-selector {
   background: linear-gradient(337deg, #243a66, #ff9272, #e3ff72, #8b5ee6, #e65ecf, #e6ad5e);
@@ -39,11 +40,40 @@
 	    text-align: center;
 	    color: #fcedd8;
 	    /* background: #d52e3f; */
-	   	font-family: 'Niconne', cursive;
+	   	font-family: 'Inter', cursive;
 	    font-weight: 700;
-      text-shadow: 5px 5px 0px #eb452b, 
-                  10px 10px 0px #efa032, 
-                  15px 15px 0px #46b59b, 
-                  20px 20px 0px #017e7f, 
-                  25px 25px 0px #052939;
+      text-shadow: 5px 5px 0px #57534e; 
+                 
 }
+.fontstyle {
+  display: inline-block;
+  color: white;
+  font-family: 'Righteous', serif;
+  font-size: 40px; 
+  text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+  }
+  .fontstyle:after {
+    content: attr(data-shadow);
+    position: absolute;
+    top: .06em; left: .06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+      linear-gradient(
+        45deg,
+        transparent 45%,
+        hsla(48,20%,90%,1) 45%,
+        hsla(48,20%,90%,1) 55%,
+        transparent 0
+        );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shad-anim 15s linear infinite;
+    }
+
+@keyframes shad-anim {
+  0% {background-position: 0 0}
+  0% {background-position: 100% -100%}
+  }
