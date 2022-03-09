@@ -58,7 +58,7 @@ const PuzzleGrids = ({ numofGrids, a2,setGrids ,setisPuzzleCompleted}) => {
           },[isGridSorted])
           return (
             <>
-              <div className='flex flex-col items-center justify-center mt-4 w-full h-full' >
+              <div className='flex flex-col items-center justify-center mt-2 w-full h-full' >
                 <div className='text-6xl font-extrabold text-center py-2 px-6 rounded-lg  bg-green-500 text-white '>
                   {numofGrids * numofGrids}
                   <span className="text-lg font-normal pl-2">Boxes</span>

@@ -46,7 +46,7 @@ const App = () => {
         <h1 className=' fontstyle text-4xl font-bold font-sans text-black text-center pt-10'>
           Grid Puzzle Task
         </h1>
-        <div className='w-2/6 py-10'>
+        <div className='w-2/6 pt-10 pb-4'>
           <input
             type="number"
             name="number"
